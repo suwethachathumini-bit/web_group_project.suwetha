@@ -1,0 +1,199 @@
+<html>
+    <head>
+       <meta charset="UTF-8">
+        <title>Study Materials</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="study_materials.css">
+    </head> 
+    <body>
+        <div class="navbar">
+            <a class="logo" href="#"><span></span>NSBM StudyCircle</a>
+            <div class="menu">
+                <a href="#">Home</a>
+                <a href="#">Materials</a>
+                <a href="#">Forum</a>
+                <a href="#">Study Groups</a>
+                <a href="#">About</a>
+            </div>
+            <div class="right">
+                <a href="#">Login</a>
+                <a><button href="#" class="btn">Register</button></a>
+
+            </div>
+        </div>
+        <div class="container">
+        <h1>Study Materials</h1>
+        <p class="sub">Browse, download and share lecture notes</p>
+
+        <div class="layout">
+
+      
+        <div class="filters box">
+            <h3>Filters</h3>
+            <h4>Subject</h4>
+
+            <input type="checkbox" id="software" name="software">
+            <label for="software"> Software Engineering</label><br>
+
+            <input type="checkbox" id="database" name="database">
+            <label for="database"> Database Systems</label><br>
+
+            <input type="checkbox" id="web" name="web">
+            <label for="web"> Web Development</label><br>
+
+            <input type="checkbox" id="networking" name="networking">
+            <label for="networking"> Networking</label><br>
+            
+            <h4>File type</h4>
+            
+            <input type="checkbox" id="PDF" name="PDF">
+            <label for="PDF">PDF</label><br>
+
+            <input type="checkbox" id="DOCX" name="DOCX">
+            <label for="DOCX">DOCX</label><br>
+
+            <input type="checkbox" id="PPTX" name="PPTX">
+            <label for="PPTX">PPTX</label><br>
+
+            <h4>Sort by</h4>
+            <select>
+                <option>Top rated</option>
+                <option>Newest</option>
+            </select>
+
+            <h4>Semester</h4>
+            <select>
+                <option>All</option>
+                <option>Sem 1</option>
+                <option>Sem 2</option>
+                <option>Sem 3</option>
+            </select>
+        </div>
+
+
+        
+        <div class="results">
+ 
+            <div class="search-bar box">
+            <input type="text" id="searchInput" placeholder="🔍 Search materials...">
+            <button type="button" class="btn" id="searchBtn">Search</button>
+        </div>
+ 
+            
+            <div class="card box">
+                <div class="icon pdf">PDF</div>
+                <div class="info">
+                    <h4>SQL Joins Cheat Sheet</h4>
+                    <p class="meta">Database Systems · Sem 2 · by Nimali P.</p>
+                    <span class="tag">Database Systems</span>
+                    <span class="tag star">★ 4.9</span>
+                </div>
+                <a href="#" class="btn btn-small">⬇ Download</a>
+                <button class="bookmark">🔖</button>
+            </div>
+ 
+            
+            <div class="card box">
+                <div class="icon pdf">PDF</div>
+                <div class="info">
+                    <h4>PHP &amp; MySQL CRUD Guide</h4>
+                    <p class="meta">Web Development · Sem 2 · by Kasun R.</p>
+                    <span class="tag">Web Development</span>
+                    <span class="tag star">★ 4.8</span>
+                </div>
+                <a href="#" class="btn btn-small">⬇ Download</a>
+                <button class="bookmark">🔖</button>
+            </div>
+ 
+            
+            <div class="card box">
+                <div class="icon ppt">PPT</div>
+                <div class="info">
+                    <h4>Software Design Patterns</h4>
+                    <p class="meta">Software Engineering · Sem 3 · by Tharindu S.</p>
+                    <span class="tag">Software Engineering</span>
+                    <span class="tag star">★ 4.6</span>
+                </div>
+                <a href="#" class="btn btn-small">⬇ Download</a>
+                <button class="bookmark">🔖</button>
+            </div>
+ 
+            
+            <div class="card box">
+                <div class="icon doc">DOC</div>
+                <div class="info">
+                    <h4>OSI Model Summary</h4>
+                    <p class="meta">Networking · Sem 1 · by Ishara W.</p>
+                    <span class="tag">Networking</span>
+                    <span class="tag star">★ 4.5</span>
+                </div>
+                <a href="#" class="btn btn-small">⬇ Download</a>
+                <button class="bookmark">🔖</button>
+            </div>
+ 
+            
+            <div class="pagination">
+                <a href="#">‹ Prev</a>
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">Next ›</a>
+            </div>
+        </div>
+    </div>
+    
+    
+     <h2>⬆ Upload Study Material</h2>
+    <p class="sub">Uploads are reviewed by an admin before publishing</p>
+ 
+    <form class="box form-box" action="study_materials.php" method="post" enctype="multipart/form-data">
+ 
+        <div class="form-left">
+            <label>Title
+                <input type="text" name="title" placeholder="e.g. Normalisation Notes – Week 4">
+            </label>
+ 
+            <label>Subject
+                <select name="subject">
+                    <option>Database Systems</option>
+                    <option>Software Engineering</option>
+                    <option>Web Development</option>
+                    <option>Networking</option>
+                </select>
+            </label>
+ 
+            <label>Description
+                <input type="text" name="description" placeholder="Short summary of what the file covers...">
+            </label>
+ 
+           
+
+            <label>Tags
+            <input type="text" id="tagInput" placeholder="Type a tag and press Enter">
+            <div id="tagList"></div>
+            <input type="hidden" name="tags" id="tagsHidden">
+            </label>
+        </div>
+ 
+        <div class="form-right">
+        <div class="dropzone" id="dropzone">
+        <svg class="border-svg">
+            <rect width="100%" height="100%" rx="10"></rect>
+        </svg>
+        <div class="big">☁⬆</div>
+        <p><b>Drag &amp; drop your file here</b></p>
+        <p id="hint">PDF, DOCX, PPTX · max 10 MB</p>
+    </div>
+            <input type="file" name="file" id="file" hidden>
+ 
+            <div class="buttons">
+                <button type="submit" class="btn">Submit for Approval</button>
+                <button type="reset" class="btn btn-outline">Cancel</button>
+            </div>
+        </div>
+ 
+    </form>
+</div>
+ <script src="study_materials.js"></script>
+    </body>
+</html>
